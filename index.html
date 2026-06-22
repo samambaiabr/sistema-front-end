@@ -127,17 +127,30 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
-                            <div class="input-group-text">
-                                <span><I class="bi bi-envelope"></I> </span>
-                                <input type="text" placeholder="Digete o E-mail" id="email" class="from-control">
+                            <div class="input-group">
+                                <span class="input-group-text"><I class="bi bi-envelope"></I> </span>
+                                <input type="email" placeholder="Digete o E-mail" id="email" class="from-control">
                             </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button> Segunda </button>
-                        <button> Segunda </button>
-                    </div>
+
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="senha" class="form-label">senha</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><I class="bi bi-envelope"></I> </span>
+                                        <input type="password" placeholder="Digete sua senha" id="senha"
+                                            class="from-control">
+                                    </div>
+                                </div>
+                                <div id="mensagemErro" class="alert alert-danger d-none">
+                                    Email ou senhas incorretor
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-segundary"> Cancelar </button>
+                                <button type="button" class="btn btn-primary"> Entrar </button>
+                            </div>
                 </form>
+                
             </div>
 
         </div>

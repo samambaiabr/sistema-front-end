@@ -4,33 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Desbloqueia</title>
 
     <!-- Bootstrap  5.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        #recursos{
+    background:
+        radial-gradient(circle at top left,#1e293b,#0f172a 60%);
+}
+
+.feature-box{
+    position: relative;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 35px;
+    overflow: hidden;
+    transition: all .4s ease;
+}
+
+.feature-box::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        transparent,
+        rgba(255,255,255,.05)
+    );
+}
+
+.feature-box:hover{
+    transform: translateY(-15px);
+    border-color:#0dcaf0;
+    box-shadow:
+        0 20px 50px rgba(13,202,240,.15);
+}
+
+.icon-box{
+    width:80px;
+    height:80px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    color:white;
+    transition:.4s;
+}
+
+.feature-box:hover .icon-box{
+    transform:
+        rotate(10deg)
+        scale(1.15);
+}
+
+.bg-purple{
+    background:linear-gradient(
+        135deg,
+        #6f42c1,
+        #8b5cf6
+    );
+}
+
+.bg-primary{
+    background:linear-gradient(
+        135deg,
+        #0d6efd,
+        #00bfff
+    ) !important;
+}
+
+.bg-success{
+    background:linear-gradient(
+        135deg,
+        #198754,
+        #20c997
+    ) !important;
+}
+
+.feature-line{
+    width:60px;
+    height:4px;
+    border-radius:50px;
+    background:#0dcaf0;
+    margin:20px 0;
+}
+
+.feature-box:hover .feature-line{
+    width:120px;
+    transition:.4s;
+}
+
+.feature-box:hover h3{
+    color:#0dcaf0;
+}
+.modal-content{
+    backdrop-filter: blur(10px);
+}
+
+.form-control{
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.input-group-text{
+    border-radius: 12px 0 0 12px;
+}
+
+.btn-primary{
+    transition: .3s;
+}
+
+.btn-primary:hover{
+    transform: translateY(-2px);
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.15);
+}
+
+.modal-content{
+    animation: aparecer .3s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+    transform: translateY(-2px);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
+
+.btn-warning {
+    transition: all .3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,193,7,.4);
+}
+.card-premium{
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all .5s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.card-premium:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,.2);
+}
+
+.card-premium img{
+    height: 240px;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.card-premium:hover img{
+    transform: scale(1.1);
+}
+
+.card-premium::before{
+    content:'';
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:250%;
+    height:250%;
+    background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,.2),
+        transparent
+    );
+    transition:.8s;
+    z-index:1;
+}
+
+.card-premium:hover::before{
+    top:100%;
+    left:100%;
+}
+
+.card-body{
+    position:relative;
+    z-index:2;
+}
+
+.card-title{
+    transition:.3s;
+}
+
+.card-premium:hover .card-title{
+    color:#0d6efd;
+}
+
+.card-premium button{
+    transition:.3s;
+}
+
+.card-premium:hover button{
+    transform:scale(1.05);
+}
+
+.card-premium{
+    animation: fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.footer-premium{
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+}
+
+.footer-link{
+    color:#adb5bd;
+    text-decoration:none;
+    transition:.3s;
+    display:inline-block;
+    margin-bottom:8px;
+}
+
+.footer-link:hover{
+    color:#0dcaf0;
+    transform:translateX(5px);
+}
+
+.social-icon{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.08);
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icon:hover{
+    background:#0dcaf0;
+    color:#fff;
+    transform:
+        translateY(-5px)
+        scale(1.1);
+}
+
+    </style>
 </head>
 
 <body>
     <!-- comentario HTML -->
 
-    <header class="p-3 bg-dark text-white">
-        <div class="container 
-                d-flex 
-                justify-content-between 
-                align-items-center">
-            <h1 class="h4 m-0"> Meu Projeto </h1>
-            <nav>
-                <a href="#" class="text-white me-3 text-decoration-none">
-                    Home
-                </a>
-                <a href="#" class="text-white me-3 text-decoration-none">
-                    Recursos
-                </a>
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                    Login
-                </button>
-            </nav>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+        <div class="container">
+    
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                🚀 Desbloqueia
+            </a>
+    
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+    
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarMenu">
+    
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+    
+                    <li class="nav-item">
+                        <a class="nav-link active px-3" href="#">
+                            Home
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">
+                            Recursos
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">
+                            Sobre
+                        </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">
+                            Contato
+                        </a>
+                    </li>
+    
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <button
+                            class="btn btn-warning fw-semibold px-4 rounded-pill"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalLogin">
+    
+                            Entrar
+                        </button>
+                    </li>
+    
+                </ul>
+    
+            </div>
+    
         </div>
     </header>
 
@@ -46,116 +369,407 @@
             </p>
 
         </section>
-
-        <section id="recursos" class="container py-4">
-            <h2 class="mb-4">Features</h2>
-            <div class="row g-4">
-                <article class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <i class="bi bi-window fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3">HTML5</h3>
-                        <p>Estrutura semântica com header, main, section, article e footer.</p>
+        <section id="recursos" class="py-5 bg-dark text-white">
+            <div class="container">
+        
+                <div class="text-center mb-5">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">
+                        NOSSAS TECNOLOGIAS
+                    </span>
+        
+                    <h2 class="display-4 fw-bold">
+                        Desenvolvido com as
+                        <span class="text-info">melhores tecnologias</span>
+                    </h2>
+        
+                    <p class="lead text-secondary">
+                        Performance, segurança e experiência moderna para seus usuários.
+                    </p>
+                </div>
+        
+                <div class="row g-4">
+        
+                    <div class="col-lg-4">
+                        <div class="feature-box h-100">
+        
+                            <div class="icon-box bg-primary">
+                                <i class="bi bi-window"></i>
+                            </div>
+        
+                            <h3 class="mt-4 fw-bold">
+                                HTML5
+                            </h3>
+        
+                            <p>
+                                Estrutura semântica moderna e otimizada para SEO e acessibilidade.
+                            </p>
+        
+                            <div class="feature-line"></div>
+        
+                            <small class="text-info">
+                                Performance • SEO • Acessibilidade
+                            </small>
+        
+                        </div>
                     </div>
-                </article>
-                <article class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <i class="bi bi-bootstrap fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3">Bootstrap</h3>
-                        <p>Layout responsivo com botões, cards, modal, grid e navbar.</p>
+        
+                    <div class="col-lg-4">
+                        <div class="feature-box h-100">
+        
+                            <div class="icon-box bg-purple">
+                                <i class="bi bi-bootstrap"></i>
+                            </div>
+        
+                            <h3 class="mt-4 fw-bold">
+                                Bootstrap 5.2
+                            </h3>
+        
+                            <p>
+                                Interface moderna, responsiva e compatível com qualquer dispositivo.
+                            </p>
+        
+                            <div class="feature-line"></div>
+        
+                            <small class="text-info">
+                                Design • Responsividade • UX
+                            </small>
+        
+                        </div>
                     </div>
-                </article>
-                <article class="col-md-4">
-                    <div class="card h-100 p-3">
-                        <i class="bi bi-code-slash fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3">JavaScript</h3>
-                        <p>Validação simples de e-mail e senha antes de entrar no admin.</p>
+        
+                    <div class="col-lg-4">
+                        <div class="feature-box h-100">
+        
+                            <div class="icon-box bg-success">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+        
+                            <h3 class="mt-4 fw-bold">
+                                JavaScript
+                            </h3>
+        
+                            <p>
+                                Interatividade avançada, validações e experiência dinâmica.
+                            </p>
+        
+                            <div class="feature-line"></div>
+        
+                            <small class="text-info">
+                                Dinamismo • Integração • Automação
+                            </small>
+        
+                        </div>
                     </div>
-                </article>
+        
+                </div>
+        
             </div>
         </section>
-
         <section class="container py-5">
-            <h2 class="mb-4">Album</h2>
-            <div class="row g-3">
-                <article class="col-md-4">
-                    <div class="card">
-                        <img src="data:image/jpeg;base64,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"
-                            class="card-img-top" alt="Curso de HTML">
-                        <div class="card-body">
-                            <p class="card-text">Curso de HTML.</p><button
-                                class="btn btn-sm btn-outline-primary">Ver</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4">
-                    <div class="card">
-                        <img src="data:image/jpeg;base64,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"
-                            class="card-img-top" alt="Curso de HTML">
-                        <div class="card-body">
-                            <p class="card-text">Curso de CSS.</p><button
-                                class="btn btn-sm btn-outline-primary">Ver</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4">
-                    <div class="card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDHVzI42QW5qh8QkIN6GzVgZrPI-iLN9NWQ&s"
-                            class="card-img-top" alt="Curso de HTML">
-                        <div class="card-body">
-                            <p class="card-text">Curso de JavaScript.</p><button
-                                class="btn btn-sm btn-outline-primary">Ver</button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="m-0"> Projeto criado para aula de Bootstrap 5 </p>
-    </footer>
+            <div class="text-center mb-5">
+                <span class="badge bg-primary rounded-pill px-3 py-2">
+                    PORTFÓLIO
+                </span>
+        
+                <h2 class="display-5 fw-bold mt-3">
+                    Nossos Cursos
+                </h2>
+        
+                <p class="text-muted">
+                    Aprenda as tecnologias mais utilizadas do mercado.
+                </p>
+            </div>
+        
+            <div class="row g-4">
+        
+                <article class="col-lg-4">
+                    <div class="card card-premium h-100">
+        
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800"
+                            class="card-img-top"
+                            alt="Curso HTML">
+        
+                        <div class="card-body">
+        
+                            <span class="badge bg-primary mb-3">
+                                Front-End
+                            </span>
+        
+                            <h4 class="card-title">
+                                HTML5 Moderno
+                            </h4>
+        
+                            <p class="text-muted">
+                                Aprenda a criar páginas semânticas e profissionais.
+                            </p>
+        
+                            <button class="btn btn-primary rounded-pill px-4">
+                                Ver Curso
+                            </button>
+        
+                        </div>
+        
+                    </div>
+                </article>
+        
+                <article class="col-lg-4">
+                    <div class="card card-premium h-100">
+        
+                        <img src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=800"
+                            class="card-img-top"
+                            alt="Curso CSS">
+        
+                        <div class="card-body">
+        
+                            <span class="badge bg-success mb-3">
+                                Design
+                            </span>
+        
+                            <h4 class="card-title">
+                                CSS3 Avançado
+                            </h4>
+        
+                            <p class="text-muted">
+                                Crie interfaces modernas com animações e responsividade.
+                            </p>
+        
+                            <button class="btn btn-success rounded-pill px-4">
+                                Ver Curso
+                            </button>
+        
+                        </div>
+        
+                    </div>
+                </article>
+        
+                <article class="col-lg-4">
+                    <div class="card card-premium h-100">
+        
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+                            class="card-img-top"
+                            alt="Curso JavaScript">
+        
+                        <div class="card-body">
+        
+                            <span class="badge bg-warning text-dark mb-3">
+                                Programação
+                            </span>
+        
+                            <h4 class="card-title">
+                                JavaScript
+                            </h4>
+        
+                            <p class="text-muted">
+                                Desenvolva aplicações dinâmicas e interativas.
+                            </p>
+        
+                            <button class="btn btn-warning rounded-pill px-4">
+                                Ver Curso
+                            </button>
+        
+                        </div>
+        
+                    </div>
+                </article>
+        
+            </div>
+        
+        </section>
+
+        <footer class="footer-premium text-white py-5">
+
+            <div class="container">
+        
+                <div class="row">
+        
+                    <div class="col-lg-4 mb-4">
+                        <h4 class="fw-bold">
+                            🚀 Desbloqueia
+                        </h4>
+        
+                        <p class="text-light opacity-75">
+                            Desenvolvendo experiências digitais modernas,
+                            rápidas e responsivas.
+                        </p>
+                    </div>
+        
+                    <div class="col-lg-4 mb-4">
+                        <h5 class="fw-semibold">
+                            Links Rápidos
+                        </h5>
+        
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="footer-link">Home</a></li>
+                            <li><a href="#recursos" class="footer-link">Recursos</a></li>
+                            <li><a href="#" class="footer-link">Cursos</a></li>
+                            <li><a href="#" class="footer-link">Contato</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="col-lg-4 mb-4">
+                        <h5 class="fw-semibold">
+                            Redes Sociais
+                        </h5>
+        
+                        <div class="d-flex gap-3 mt-3">
+        
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+        
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+        
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+        
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-github"></i>
+                            </a>
+        
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <hr class="border-secondary my-4">
+        
+                <div class="text-center">
+                    <p class="m-0 text-light">
+                        © 2026 Desbloqueia • Todos os direitos reservados.
+                    </p>
+                </div>
+        
+            </div>
+        
+        </footer>
 
     <!-- Modal  -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="false">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+    
                 <form id="formLogin">
-                    <div class="modal-header">
-                        <h5 class="modal-title"> Login </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal">
-                        </button>
+    
+                    <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">
+    
+                    <div class="modal-body px-4 pb-4">
+    
+                        <div class="text-center mb-4">
+    
+                            <div class="bg-primary bg-gradient rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width:80px;height:80px;">
+    
+                                <i class="bi bi-person-fill text-white fs-1"></i>
+    
+                            </div>
+    
+                            <h3 class="fw-bold mb-1">
+                                Bem-vindo
+                            </h3>
+    
+                            <p class="text-muted">
+                                Entre na sua conta para continuar
+                            </p>
+    
+                        </div>
+    
                         <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
+                            <label class="form-label fw-semibold">
+                                E-mail
+                            </label>
+    
                             <div class="input-group">
-                                <span class="input-group-text"><I class="bi bi-envelope"></I> </span>
-                                <input type="email" placeholder="Digete o E-mail" id="email" class="from-control">
+    
+                                <span class="input-group-text bg-light border-end-0">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+    
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control border-start-0"
+                                    placeholder="Digite seu e-mail">
+    
                             </div>
-
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="senha" class="form-label">senha</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><I class="bi bi-envelope"></I> </span>
-                                        <input type="password" placeholder="Digete sua senha" id="senha"
-                                            class="from-control">
-                                    </div>
-                                </div>
-                                <div id="mensagemErro" class="alert alert-danger d-none">
-                                    Email ou senhas incorretor
-                                </div>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">
+                                Senha
+                            </label>
+    
+                            <div class="input-group">
+    
+                                <span class="input-group-text bg-light border-end-0">
+                                    <i class="bi bi-lock-fill"></i>
+                                </span>
+    
+                                <input
+                                    type="password"
+                                    id="senha"
+                                    class="form-control border-start-0"
+                                    placeholder="Digite sua senha">
+    
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-segundary"> Cancelar </button>
-                                <button type="button" class="btn btn-primary"> Entrar </button>
+                        </div>
+    
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+    
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="lembrar">
+    
+                                <label class="form-check-label" for="lembrar">
+                                    Lembrar-me
+                                </label>
                             </div>
+    
+                            <a href="#" class="text-decoration-none">
+                                Esqueci minha senha
+                            </a>
+    
+                        </div>
+    
+                        <div id="mensagemErro"
+                            class="alert alert-danger d-none rounded-3">
+                            E-mail ou senha incorretos.
+                        </div>
+    
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100 py-2 rounded-3 fw-semibold">
+    
+                            <i class="bi bi-box-arrow-in-right me-2"></i>
+                            Entrar
+    
+                        </button>
+    
+                        <div class="text-center mt-4">
+    
+                            <span class="text-muted">
+                                Não possui conta?
+                            </span>
+    
+                            <a href="#" class="text-decoration-none fw-semibold">
+                                Criar conta
+                            </a>
+    
+                        </div>
+    
+                    </div>
+    
                 </form>
-
+    
             </div>
-
         </div>
-
     </div>
 
     <!-- Bootstrap 5.2 -->

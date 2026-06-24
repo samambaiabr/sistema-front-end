@@ -13,12 +13,14 @@
         #brand {
             color: rgb(229, 255, 0);
         }
-        .nav-link{
+
+        .nav-link {
             color: chocolate;
         }
-       .nav-link:hover{
-        color: blueviolet;
-       }
+
+        .nav-link:hover {
+            color: blueviolet;
+        }
     </style>
 </head>
 
@@ -40,20 +42,58 @@
                         <li class="nav-item"><a class="nav-link"> sair </a></li>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     </header>
-<main class="container py-4">
-    <div class="card-shadow">
-        <div class="card-header bg-secondary text-white">
-            <h1 class="h4 mb-0">
-                <i class="bi bi-journal-bookmark-fill">
+    <main class="container py-4">
+        <div class="card shadow">
+            <div class="card-header bg-secondary text-white">
+                <h1 class="h4 mb-0">
+                    <i class="bi bi-journal-bookmark-fill">
 
-                </i>Cadastro de Curso </h1>
+                    </i>Cadastro de Curso
+                </h1>
+            </div>
+            <div class="card-body">
+                <form id="formCurso">
+                    <div class="mb-3">
+                        <label for="nomeCurso" class="form-label"> Nome do Curso</label>
+                        <div class="input-group" id="search">
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control" id="nomeCurso">
+                        </div>
+
+                        <div class="input-group" id="search">
+                            <label for="nomeCurso" class="form-label"> Descriçao</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" id="nomeCurso">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="nomeCurso" class="form-label">Carga Horaria</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-search"></i>
+                                    </span>
+                                    <input type="number" class="form-control" id="nomeCurso">
+                                </div>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="bi bi-save"></i>
+                                    salvar
+                                </button>
+
+                            </div>
+                </form>
+            </div>
         </div>
-    </div>
-</main>
+        </div>
+    </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
